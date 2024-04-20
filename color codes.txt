@@ -1,0 +1,4 @@
+#8da683 (links backgrounds)
+#f2dcb1 (links text)
+#dc8920	(buttons background)
+#d99d29 (div sections backgrounds)

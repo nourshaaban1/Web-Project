@@ -1,0 +1,595 @@
+/* start global  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --main-color : #EDA24E;
+    --secondary-color: #0FA2B4;
+}
+body {
+    overflow-x: hidden;
+    font-family:'Mulish', sans-serif;
+    scroll-behavior: smooth;
+}
+.container {
+    padding: 0 100px 0 100px;
+}
+::placeholder {
+    font-family: 'Mulish', sans-serif;
+    color: #333;
+    font-size: 16px;
+}
+input {
+    border: none;
+    outline: none;
+    background-color: #fff;
+    width: 98%;
+    height: 55px;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #333;
+    font-family: 'Mulish', sans-serif;
+    transition: all ease 0.2s;
+}
+input:focus {
+    box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.15);
+}
+/* end global  */
+
+/* start header */
+/* start  nav */
+.container {
+    padding: 0 80px;
+}
+header {
+    background-color: #F5F6F9;
+    position: relative;
+}
+header .left {
+    color: #FFF;
+    display: flex;
+    font-family:Arial, Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--main-color);
+    position: absolute;
+    border-radius: 50%;
+    bottom: -26px;
+    left: 48.5%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: all 0.3s ;
+}
+header .right {
+    color: #FFF;
+    display: flex;
+    font-family:Arial, Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--main-color);
+    position: absolute;
+    border-radius: 50%;
+    bottom: -26px;
+    left: 51.5%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: all 0.3s ;
+}
+header span:hover {
+    background-color: var(--secondary-color);
+}
+header nav {
+    background-color: var(--main-color);
+}
+header .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--main-color);
+    height: 80px;
+    padding: 0 100px;
+    overflow: hidden;
+}
+header .nav .logo  {
+    text-decoration: none;
+    color: #fff;
+    flex: 1;
+}
+header .nav .logo a {
+    text-decoration: none;
+    color: #fff;
+}
+header .nav .logo h2::first-letter {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 30px;
+}
+header .nav .links {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    flex: 1.6;
+}
+header .nav .links ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 40px 10px; 
+}
+header .nav .links li {
+    padding: 40px 10px; 
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+header .nav .links ul li a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+header .nav .links ul li:hover  {
+    background-color: var(--secondary-color);
+}
+/* end nav */
+header section {
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header section .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+header section .text-content{
+    width: 35%;
+    height: 100%;
+}
+header section .text-content h4 {
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+header section .text-content h1 {
+    font-weight: 700;
+    color: #333;
+    font-size: 50px;
+    line-height: 1.1;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+header section .text-content p {
+    color: #777;
+    width: 100%;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    
+}
+
+header section .text-content button {
+    width: 35%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-color);
+    border-radius: 60px;
+    color: #fff;
+    font-family:'Mulish', sans-serif;
+    font-size: 17px;
+    margin-top: 10px;
+    border: 1px solid var(--secondary-color);
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+header section .text-content button:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+}
+header section .img {
+    height: 650px;
+}
+header section img {
+    height: 100%;
+}
+/* end header */
+
+/* start categories */
+
+.categories .content {
+    padding: 100px 0 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 60px;
+    /* margin: 0 auto; */
+}
+.categories .content div {
+    text-align: center;
+}
+.categories .content .heading {
+    color: #333;
+}
+.categories .content .heading h1 {
+    color: #333;
+    font-size: 35px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.categories .content .heading p {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.categories .content .cat-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+    row-gap: 30px;
+    column-gap: 40px;
+}
+.categories .cat-content div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.categories .cat-content div i {
+    font-size: 45px;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+.categories .cat-content div h2 {
+    font-weight: 600;
+    color: #333;
+}
+.categories .cat-content div p {
+    font-weight: 600;
+    color: #777;
+    width: 100%;
+    line-height: 1.4;
+    word-spacing: 2px;
+}
+
+/* end categories */
+
+/* start about */
+.about {
+    padding: 100px 0;
+    background-color: #F5F6F9;
+    width: 100%;
+}
+.about .container {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 50px;
+}
+.about .container img {
+    height: 400px;
+    flex-basis: 30%;
+}
+.about .container .text-content {
+    flex-basis: 35%;
+}
+.about .text-content h1 {
+    font-size: 35px;
+    margin: 25px 0;
+    color: #333;
+}
+.about .text-content p {
+    font-size: 16px;
+    margin: 25px 0;
+    width: 90%;
+    color: #777;
+}
+.about .text-content button {
+    width: 35%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-color);
+    border-radius: 60px;
+    color: #fff;
+    font-family:'Mulish', sans-serif;
+    font-size: 17px;
+    margin-top: 10px;
+    border: 1px solid var(--secondary-color);
+    transition: all ease 0.3s;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.about .text-content button:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+}
+.our-books {
+    background-color: #fff;
+    width: 100%;
+    padding: 60px 0;
+}
+.our-books h1 {
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 35px;
+}
+.our-books .content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 40px;
+    padding: 20px 10px;
+}
+.our-books .content .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 36%;
+    height: 650px;
+    background-color: #F5F6F9;
+    transition: all ease 0.2s ;
+    position: relative;
+}
+.our-books .content .box:hover {
+    transform: scale(1.02);
+    box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.our-books .content .box .img {
+    height: 400px;
+    width: 100%;
+    position: relative;
+}
+.our-books .content .box .img::after {
+    content: "27 January 2004";
+    font-weight: 600;
+    font-size: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    width: 32%;
+    height: 46px;
+    background-color: #EDA24E;
+    bottom: -23px;
+    left: 25px;
+    border: 3px solid #F5F6F9;
+    border-radius: 40px;
+}
+.our-books .content .box .img img {
+    height: 400px;
+    width: 100%;
+}
+.our-books .content .box .text {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+
+.our-books .content .box .text h5 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    letter-spacing: 1px;
+    color: #333;
+}
+.our-books .content .box .text p {
+    color: #777;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.our-books .content .box .read-more {
+    margin-left: 30px;
+    margin-bottom: 40px;
+}
+.our-books .content .box .read-more a {
+    text-decoration: none;
+    color: #0FA2B4;
+    font-size: 18px;
+}
+/* end about */
+
+/* start contact */
+.contact {
+    padding: 100px 0;
+    background-color: #F5F6F9;
+    width: 100%;
+}
+.contact .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.contact .container div:not(.img) {
+    flex-basis: 30%;
+}
+.contact .container h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+.contact .container input.message {
+    width: 98%;
+    border: none;
+    outline: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    height: 130px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.contact .container textarea::placeholder {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.contact .container img {
+    height: 400px;
+    width: 100%;
+}
+.contact .container button {
+    width: 98%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-color);
+    border-radius: 60px;
+    color: #fff;
+    font-family:'Mulish', sans-serif;
+    font-size: 17px;
+    margin-top: 10px;
+    border: 1px solid var(--secondary-color);
+    transition: all ease 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.contact .container button:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+}
+/* end contact */
+
+/* start About-Us */
+.about-us {
+    background-color: #EDA24E;
+    padding: 50px 0;
+}
+.about-us .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+}
+.about-us .container .info,
+.about-us .container .address,
+.about-us .container .newsletter {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    gap: 20px;  
+    justify-content: center;
+    width: 20%;
+}
+.about-us .container .info {
+    display: flex;
+    flex-direction: column;
+
+}
+.about-us .container div h1 {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 500;
+}
+.about-us .container div p:not(.not) {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    display: inline-block;
+    margin-left: 10px;
+    transition: color ease 0.2s;
+}
+.about-us .container div a {
+    color: #fff;
+    text-decoration: none;
+    transition: color ease 0.2s;
+}
+.about-us .container .address div i {
+    /* width: 20px;
+    height: 20px; */
+    font-size: 20px;
+}
+.about-us .container .info .icon-links {
+    display: flex;
+    
+}
+.about-us .container .info .icon-links i {
+    color: #EDA24E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    transition: color ease-in 0.2s;
+}
+.about-us .container .info .icon-links i:hover {
+    color: #0FA2B4;
+}
+
+.about-us .container div a:hover,
+.about-us .container div p:not(.not):hover {
+    color: #0FA2B4;
+}
+
+.about-us .container .newsletter h1 {
+    margin-top: 10px;
+}
+.about-us .container .newsletter input {
+    width: 100%;
+    background-color: #F5F6F9;
+    height: 40px;
+    margin-bottom: -15px;
+    margin-top: -5px;
+}
+.about-us .container .newsletter button {
+    width: 98%;
+    height: 50px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-color);
+    border-radius: 60px;
+    color: #fff;
+    font-family:'Mulish', sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+    border: 2px solid var(--secondary-color);
+    transition: all ease 0.3s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.about-us .container .newsletter button:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+}
+/* end About-Us */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+
