@@ -47,5 +47,5 @@ if(localStorage.length !== 0)
 }
 else 
 {
-    confirm("There is no available books");
+    alert("There is no available books");
 }
