@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
 :root {
     --main-color : #EDA24E;
@@ -40,12 +41,112 @@ input {
 input:focus {
     box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.15);
 }
+/* search-bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 700px;
+    border-radius: 50px;
+    margin-bottom: 200px;
+  }
+  
+  .dropdown {
+    position: relative;
+    width: 280px;
+    border-radius: 50px;
+    background-color: var(--secondary-color);
+    box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  
+  .dropdown-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: transparent;
+    padding: 1rem 1.5rem;
+    color: #fff;
+  }
+  
+  .dropdown-list {
+    display: block;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    border-radius: 15px;
+    max-height: 0;
+    overflow: hidden;
+    background-color: var(--main-color);
+    transition: max-height 0.5s;
+  }
+  
+  .dropdown-list-item {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 1rem 0 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.3s ease, margin-left 0.2s ease;
+  }
+
+  .dropdown-list-item:hover {
+    margin-left: 0.5rem;
+    color: var(--secondary-color);
+  }
+  
+  #list.show {
+    max-height: 300px;
+  }
+  
+  .search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    width: 100%;
+    color: var(--secondary-color);
+  }
+  
+  .search-box input {
+    padding: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    border: 0;
+    outline: 0;
+    box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.3);
+  }
+  
+  .search-box i {
+    font-size: 1.3rem;
+    cursor: pointer;
+    position: absolute;
+    right: 6%;
+  }
+  
+  .search-box input::placeholder {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+  }
+  
+  /* search-bar */
+
+
 /* end global  */
 
 /* start header */
+
 /* start  nav */
 .container {
-    padding: 0 30px;
+    padding: 0 80px;
 }
 header {
     background-color: #F5F6F9;
@@ -100,6 +201,7 @@ header .nav {
     width: 100%;
     background-color: var(--main-color);
     height: 80px;
+    padding: 0 100px;
     overflow: hidden;
 }
 header .nav .logo  {
@@ -120,11 +222,13 @@ header .nav .links {
     display: flex;
     justify-content: space-between;
     gap: 100px;
+    flex: 1.6;
 }
 header .nav .links ul {
     display: flex;
     list-style: none;
-    gap: 20px; 
+    gap: 20px;
+    padding: 40px 10px; 
 }
 header .nav .links li {
     padding: 40px 10px; 
@@ -588,3 +692,5 @@ footer {
     text-align: center;
     color: var(--secondary-color);
 }
+
+
