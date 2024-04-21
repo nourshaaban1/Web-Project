@@ -1,10 +1,12 @@
 let allBooks = [];
 for (let i = 0; i < localStorage.length; i++)
 {
-    let isbn = localStorage.key(i);
-    let storedBook = localStorage.getItem(isbn);
-    let book = JSON.parse(storedBook);
-    allBooks.push(book);
+    if(localStorage.key(i) !== 'role'){
+        let isbn = localStorage.key(i);
+        let storedBook = localStorage.getItem(isbn);
+        let book = JSON.parse(storedBook);
+        allBooks.push(book);
+    }
 }
 
 let bookTable = document.getElementById('book-table');
