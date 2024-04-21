@@ -1,8 +1,8 @@
-urlParams = new URLSearchParams(window.location.search);
-isbn = urlParams.get('isbn');
+let urlParams = new URLSearchParams(window.location.search);
+let isbn = urlParams.get('isbn');
 
-storedBook = localStorage.getItem(isbn);
-book = JSON.parse(storedBook);
+let storedBook = localStorage.getItem(isbn);
+let book = JSON.parse(storedBook);
 
 document.title = book.title;   
 bookContainer = document.getElementById('book-container');
@@ -66,3 +66,17 @@ bookContainer.innerHTML = `
                 </div>
             </div>
 `;
+
+let storgedRole = localStorage.getItem('role');
+let role = JSON.parse(storgedRole);
+
+if(role == 'admin')
+{
+    document.getElementById('main-links').innerHTML = `
+        <li><a href="home.html">home</a></li>
+        <li><a href="About.html">about</a></li>
+        <li><a href="all-books.html">books</a></li>
+        <li><a href="category.html">categories</a></li>
+        <li><a href="book-table.html">Manage</a></li>
+    `;
+}
