@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Add new book</title>
-    <script src="../scripts/upload-book.js" defer></script>
+    <script src="../scripts/edit-book.js" defer></script>
     <link rel="icon" type="image/png" href="../Photos/Icon.png" height="32px" weight="32px">
     <link rel="stylesheet" href="../Styles/nav-bar.css">
     <link rel="stylesheet" href="../Styles/upload-book.css">
@@ -58,7 +58,7 @@
                     <input id="category" type="text" required>
                 </li>
                 <li class="info-item">
-                    <label for="isbn">ISBM:</label>
+                    <label for="isbn">ISBN:</label>
                     <input id="isbn" type="text" required>
                 </li>
                 <div class="small-list">
@@ -88,7 +88,7 @@
                     <input id="book-cover" type="text" required>    
                 </li>
             </ul>
-            <button type="submit" value="save">Save Changes</button>
+            <button type="submit" value="save" id="save-changes">Save Changes</button>
         </form>
     </main>
 

@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="../scripts/book-page.js" defer></script>
-  <title></title>
+  <script src="../scripts/book-table.js" defer></script>
+  <title>Books Avaliable</title>
   <link rel="icon" type="image/png" href="../Photos/Icon.png" sizes="32x32">
   <link rel="stylesheet" href="../Styles/footer.css">
   <link rel="stylesheet" href="../Styles/nav-bar.css">
-  <link rel="stylesheet" href="../Styles/book-page.css">
+  <link rel="stylesheet" href="../Styles/book-table.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -37,9 +37,17 @@
     </nav>
   </header>
   <main>
-      <div class="book-container" id="book-container"></div>
-      <footer>&copy; 2024 All Rights Reserved By FCAI-Developers</footer>
+    <div class="table-container">
+        <table id="book-table">
+            <tr>
+                <th>Book Cover</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Edit</th>
+            </tr>
+        </table>
+    </div>
+    <footer>&copy; 2024 All Rights Reserved By FCAI-Developers</footer>
   </main>
-    
-</body>    
+</body>  
 </html>
