@@ -1,0 +1,10 @@
+footer {
+    padding: 25px;
+    text-align: center;
+    color: var(--secondary-color);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%)
+}

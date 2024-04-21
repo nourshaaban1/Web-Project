@@ -1,0 +1,116 @@
+ .container1 {
+    padding: 20px;  
+    background-color: rgba(237, 162, 78, 0.7);
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(161, 152, 152, 0.1); 
+    height: 700px;
+    width: 700px;
+    align-content: center;
+}
+
+.Elgen{
+    height: 100vh;
+    display: flex;
+    margin-top: 10rem;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    background-image: url("/Web-Project-main/Photos/janko-ferlic-sfL_QOnmy00-unsplash.jpg");
+    background-size: cover;
+    font-family:'Mulish', sans-serif;
+}
+
+
+.container1 img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 35%;
+    height: 35%; 
+}
+
+.container1 h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container1 ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;   
+}
+
+.container1 ul li {
+    font-size:x-large;
+    margin: 20px;
+    color:azure;
+}
+
+.container1 ul li strong {
+    font-weight: bold;
+    font-size:x-large;
+    color: black;
+}
+
+.cont3{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 60px;
+    margin-top: 10px;
+    background-color:transparent;
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+}
+.cont3 a{
+    text-decoration: none;
+    color: azure;
+}
+
+
+
+.Btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:center; 
+    width: 30%; 
+    height: 70px; 
+    border: none;
+    padding: 0px 20px;
+    background-color: #0FA2B4;
+    color: #EDA24E;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 50px;
+    transition-duration: .3s;
+    margin: 0 auto;
+    margin-top: 5px;
+    font-size: x-large;
+}
+  
+  .svg {
+    width: 25px;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    fill: #EDA24E;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover {
+    color: transparent;
+  }
+  
+  .Btn:hover svg {
+    right: 43%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    transition-duration: .3s;
+  } 
+
+

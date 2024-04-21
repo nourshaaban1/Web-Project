@@ -1,0 +1,136 @@
+main {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px 40px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+body{
+    background-image: url(/Web-Project-main/Photos/b5.jpg);
+    font-family:'Mulish', sans-serif;
+}
+
+.upload-form {
+    width: 94%;
+    height: 90%;
+    margin: 28px 40px;
+    padding: 15px;
+    background-color: rgba(237, 162, 78, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.info-header {
+    margin-bottom: 20px;
+    color: white;
+    background-color: #363636;
+    border-radius: 12px;
+    width: 200px;
+    padding: 12px;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.info-item {
+    color: white;
+    background-color: #363636;  
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.info-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.info-item input[type="text"],
+.info-item input[type="file"],
+.info-item input[type="number"]
+.info-item textarea {
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.info-item input[type="text"]:focus,
+.info-item input[type="file"]:focus,
+.info-item input[type="number"]:focus
+.info-item textarea:focus {
+    outline: none;
+}
+
+.small-list {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+
+.info-item input[type="number"] {
+    background-color: white;
+    color: #363636;
+    border-radius: 5px;
+    outline: none;
+}
+
+.info-item input[type="text"] {
+    width: 400px;
+}
+
+.info-item #rating {
+    width: 165px;
+    height: 20px;
+}
+
+.info-item textarea {
+    width: 725px;
+    height: 110px;
+    direction: rtl;
+}
+
+
+.upload-form button,
+.upload-form button {
+    width: 200px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 12px;
+    background-color: #007bff;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition-duration: 0.4s;  
+    background: linear-gradient(to right, var(--secondary-color) 50%, white 50%);
+    background-size: 200% 100%; 
+    background-position: right bottom; 
+    transition: background-position 0.5s ease, transform 0.5s ease;
+}
+
+.upload-form button:hover,
+.upload-form button:hover {
+    background-position: left bottom;
+    transform: scale(1.1);   
+    color: white;
+}
+
+.upload-form button:active,
+.upload-form button:active {
+    border: 0px;
+    transform: scale(0.9);
+}
