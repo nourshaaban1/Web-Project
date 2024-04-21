@@ -108,7 +108,7 @@ header .nav .links ul li:hover  {
     margin: 30px 30px;
 }
 .sign-up .img {
-    background-image: url(/Web-Project-main/Photos/contact-img.png);
+    background-image: url(../Photos/contact-img.png);
     width: 45%;
     background-size: cover;
     background-repeat: no-repeat;
