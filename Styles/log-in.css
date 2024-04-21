@@ -21,6 +21,8 @@ body {
 .container {
     padding: 0 80px;
 }
+
+
 header nav {
     background-color: var(--main-color);
 }
@@ -80,11 +82,13 @@ header .nav .links ul li:hover  {
 
 .login {
     border-radius: 25px;
-    max-width: 65%;
+    width: 75%;
+    min-height: 600px;
     margin: 50px auto 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     background-color: #ecddbf28;
+    align-items: center;
     opacity: 0.9;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
@@ -95,19 +99,25 @@ header .nav .links ul li:hover  {
 }
 
 .login .img {
-    width: 45%;
+    width: 60%;
+    border-radius: 20px;
+    margin: 20px;
+}
+.login img {
+    width: 90%;
+    height: 500px;
     border-radius: 20px;
     margin: 20px;
 }
 
 .login .info .header h1 {
     font-size: 50px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     color: #0FA2B4;
 }
 
 .login .info .header p {
-    color: hsl(235, 18%, 26%);
+    color: #333;
     font-weight: 400;
 }
 
@@ -119,17 +129,20 @@ header .nav .links ul li:hover  {
     font-weight: 700;
 }
 
-.login .info form input[type="email"],
+.login .info form input[type="text"],
 .login .info form input[type="password"] {
     box-shadow: 0px 0px 5px #0FA2B4;
     padding: 15px 20px;
     width: 85%;
     border-radius: 20px;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    background-color: #ecddbf28;
+    border:none;
+    outline: none;
 }
 
-.login .info form input[type="email"]:focus,
+.login .info form input[type="text"]:focus,
 .login .info form input[type="password"]:focus {
     background-color: #0FA2B4;
     color: #FFF;
@@ -141,19 +154,25 @@ header .nav .links ul li:hover  {
 .login .info form input[type="submit"] {
     background-color: #0FA2B4;
     color: #FFF;
-    width: 93%;
+    width: 85%;
     border: none;
     padding: 15px 20px;
     border-radius: 20px;
     font-size: 18px;
     cursor: pointer;
     transition: all ease 0.15s;
+    margin-top: 25px;
+    margin-bottom: 30px;
 }
 
 .login .info form input[type="submit"]:hover {
     background-color: transparent;
     border: 1px solid #0FA2B4;
     color: #0FA2B4;
+}
+
+.login .info p {
+    margin-left: 7px;
 }
 
 .login .info p a {
@@ -164,4 +183,52 @@ header .nav .links ul li:hover  {
 
 .login .info p a:hover {
     text-decoration: underline;
+}
+/* Form Validation */
+
+.login .info form div {
+    position: relative;
+}
+.login .info form div i {
+    font-size: 25px;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 33%;
+    transform: translateY(-50%);
+    right: 17%;
+    display: none;
+}
+
+.login .info form div i.bxs-check-circle {
+    color: #0FA2B4;
+}
+.login .info form div i.bxs-x-circle {
+    color: #EDA24E;
+}
+.login .info form div i.check,
+.login .info form div i.wrong {
+    display: block;
+}
+.login .info form div #validation1,
+.login .info form div #validation0 {
+    color: #EDA24E;
+    font-size: 16px;
+    margin-left: 10px;
+    text-transform: capitalize;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Form Validation */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: var(--secondary-color);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%)
 }

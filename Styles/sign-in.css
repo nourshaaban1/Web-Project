@@ -155,28 +155,33 @@ header .nav .links ul li:hover  {
 /* error messages */
 
 .sign-up .info .register form p {
-    color: rgb(184, 17, 17);
+    color: #EDA24E;
     font-style: italic;
     font-size: 17px;
     /* margin-bottom: 10px; */
     margin-left: 10px;
 }
-
-.sign-up .info .register form #check {
-    color: #0FA2B4;
-    font-size: 1.3rem;
-    vertical-align: middle;
+.sign-up .info .register section {
     position: relative;
-    right: 35px;
+}
+.sign-up .info .register form i.bxs-check-circle,
+.sign-up .info .register form i.bxs-x-circle {
+    font-size: 25px;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 46%;
+    right: 17%;
     display: none;
 }
-.sign-up .info .register form #wrong {
-    color: rgb(184, 17, 17);
-    font-size: 1.3rem;
-    vertical-align: middle;
-    position: relative;
-    right: 35px;
-    display: none;
+.sign-up .info .register form i.bxs-check-circle{
+    color: #0FA2B4;
+}
+.sign-up .info .register form i.bxs-x-circle {
+    color: #EDA24E;
+}
+.sign-up .info .register form i.check,
+.sign-up .info .register form i.wrong {
+    display: block;
 }
 
 
@@ -226,12 +231,10 @@ header .nav .links ul li:hover  {
     display: none;
   }
   
-  /* Show the indicator (dot/circle) when checked */
 .sign-up .info .register .radio input:checked ~ span:after {
     display: block;
 }
   
-  /* Style the indicator (dot/circle) */
 .sign-up .info .register .radio span:after {
     top: 9px;
     left: 9px;
@@ -262,3 +265,15 @@ header .nav .links ul li:hover  {
     color: #0FA2B4;
 }
 /* End Sign-up */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: var(--secondary-color);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%)
+}
