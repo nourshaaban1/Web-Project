@@ -4,6 +4,7 @@ isbn = urlParams.get('isbn');
 storedBook = localStorage.getItem(isbn);
 book = JSON.parse(storedBook);
 
+document.title = book.title;   
 bookContainer = document.getElementById('book-container');
 bookContainer.innerHTML = `
 <div class="book-cover">

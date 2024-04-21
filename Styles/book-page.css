@@ -1,5 +1,5 @@
 main {
-    background-image: url(/Web-Project-main/Photos/b5.jpg);
+    background-image: url(../Photos/b5.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 40px 40px;
@@ -166,4 +166,8 @@ body{
 .book-cover .star-rating .num-rating {
     font-size: 10px;
     color: white;
+}
+
+footer {
+    color: black;
 }
