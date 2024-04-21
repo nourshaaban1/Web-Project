@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Add new book</title>
-    <script src="/Web-Project-main/scripts/upload-book.js" defer></script>
-    <link rel="icon" type="image/png" href="/Web-Project-main/Photos/Icon.png" height="32px" weight="32px">
-    <link rel="stylesheet" href="/Web-Project-main/Styles/nav-bar.css">
-    <link rel="stylesheet" href="/Web-Project-main/Styles/upload-book.css">
-    <link rel="stylesheet" href="/Web-Project-main/Styles/footer.css">
+    <script src="../scripts/upload-book.js" defer></script>
+    <link rel="icon" type="image/png" href="../Photos/Icon.png" height="32px" weight="32px">
+    <link rel="stylesheet" href="../Styles/nav-bar.css">
+    <link rel="stylesheet" href="../Styles/upload-book.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
       </header>
     <main>
         <form class="upload-form" id="upload-form">
-            <h2 class="info-header">Add New book</h2>
+            <h2 class="info-header">Edit book</h2>
             <ul class="info-list">
                 <li class="info-item">
                     <label for="book-title">Book title:</label>
@@ -88,8 +88,7 @@
                     <input id="book-cover" type="text" required>    
                 </li>
             </ul>
-            <button type="submit" value="upload">Upload</button>
-            <button type="reset" value="reset">Reset</button>
+            <button type="submit" value="save">Save Changes</button>
         </form>
     </main>
 

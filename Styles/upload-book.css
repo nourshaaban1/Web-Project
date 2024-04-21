@@ -7,7 +7,7 @@ main {
     justify-content: center;
 }
 body{
-    background-image: url(/Web-Project-main/Photos/b5.jpg);
+    background-image: url(../Photos/b5.jpg);
     font-family:'Mulish', sans-serif;
 }
 
@@ -31,6 +31,7 @@ body{
     border-radius: 12px;
     width: 200px;
     padding: 12px;
+    text-align: center;
 }
 
 .info-list {
@@ -59,8 +60,8 @@ body{
 
 .info-item input[type="text"],
 .info-item input[type="file"],
-.info-item input[type="number"]
 .info-item textarea {
+    background-color: white;
     padding: 8px;
     border: none;
     outline: none;
@@ -69,9 +70,17 @@ body{
 
 .info-item input[type="text"]:focus,
 .info-item input[type="file"]:focus,
-.info-item input[type="number"]:focus
+.info-item input[type="number"]:focus,
 .info-item textarea:focus {
     outline: none;
+}
+
+.info-item input[type="number"] {
+    background-color: white;
+    padding: 4px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
 }
 
 .small-list {
@@ -81,13 +90,6 @@ body{
 }
 
 
-.info-item input[type="number"] {
-    background-color: white;
-    color: #363636;
-    border-radius: 5px;
-    outline: none;
-}
-
 .info-item input[type="text"] {
     width: 400px;
 }
@@ -95,6 +97,7 @@ body{
 .info-item #rating {
     width: 165px;
     height: 20px;
+    padding: 4px;
 }
 
 .info-item textarea {

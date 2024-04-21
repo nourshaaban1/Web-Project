@@ -6,7 +6,7 @@ main {
 }
 
 body{
-    background-image: url(/Web-Project-main/Photos/b5.jpg);
+    background-image: url(../Photos/b5.jpg);
     font-family:'Mulish', sans-serif;
 }
 
