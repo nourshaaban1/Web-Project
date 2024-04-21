@@ -1,37 +1,17 @@
-let dropdownBtnText = document.getElementById("drop-text");
-let span = document.getElementById("span");
-let icon = document.getElementById("icon");
-let list = document.getElementById("list");
-let input = document.getElementById("search-input");
-let listItems = document.querySelectorAll(".dropdown-list-item");
+let buttons = document.querySelectorAll("button");
 
-dropdownBtnText.onclick = function () {
-  list.classList.toggle("show");
-  icon.style.rotate = "-180deg";
-};
+buttons[0].onclick = ()=> {
+    buttons[0].style.cssText = `
+    width: 0px;
+    height: 0px; 
+    border: none;
+    background: none;
+    marign: 0;
+    padding: 0; `;
+    setTimeout(() => {buttons[0].innerHTML = "";},50)
+    document.querySelector("p").innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quam velit saepe dolorem deserunt quo quidem ad optioLorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quam velit saepe dolorem deserunt quo quidem ad optioLorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quam velit saepe dolorem deserunt quo quidem ad optioLorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quam velit saepe dolorem deserunt quo quidem ad optioLorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quam velit saepe dolorem deserunt quo quidem ad optioLorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quam velit saepe dolorem deserunt quo quidem ad optio";
 
-window.onclick = function (e) {
-  if (
-    e.target.id !== "drop-text" &&
-    e.target.id !== "icon" &&
-    e.target.id !== "span" 
-  ) {
-    list.classList.remove("show");
-    icon.style.rotate = "0deg";
-  }
-};
-
-for (item of listItems) {
-  item.onclick = function (e) {
-    span.innerText = e.target.innerText;
-    if (e.target.innerText == "Everything") {
-      input.placeholder = "Search Anything...";
-    } else {
-      input.placeholder = "Search in " + e.target.innerText + "...";
-    }
-  };
 }
-
 let storgedRole = localStorage.getItem('role');
 let role = JSON.parse(storgedRole);
 

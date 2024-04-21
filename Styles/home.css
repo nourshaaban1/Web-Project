@@ -49,18 +49,18 @@ input:focus {
     min-width: 700px;
     border-radius: 50px;
     margin-bottom: 200px;
-  }
+}
   
-  .dropdown {
+.dropdown {
     position: relative;
     width: 280px;
     border-radius: 50px;
     background-color: var(--secondary-color);
     box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-  }
-  
-  .dropdown-text {
+}
+
+.dropdown-text {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -69,9 +69,9 @@ input:focus {
     background-color: transparent;
     padding: 1rem 1.5rem;
     color: #fff;
-  }
-  
-  .dropdown-list {
+    }
+
+.dropdown-list {
     display: block;
     position: absolute;
     display: flex;
@@ -85,35 +85,35 @@ input:focus {
     overflow: hidden;
     background-color: var(--main-color);
     transition: max-height 0.5s;
-  }
-  
-  .dropdown-list-item {
+}
+
+.dropdown-list-item {
     font-size: 0.9rem;
     font-weight: 500;
     padding: 1rem 0 1rem;
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.3s ease, margin-left 0.2s ease;
-  }
+}
 
-  .dropdown-list-item:hover {
+.dropdown-list-item:hover {
     margin-left: 0.5rem;
     color: var(--secondary-color);
-  }
-  
-  #list.show {
+}
+
+#list.show {
     max-height: 300px;
-  }
-  
-  .search-box {
+}
+
+.search-box {
     position: relative;
     display: flex;
     align-items: center;
     padding-right: 1rem;
     width: 100%;
     color: var(--secondary-color);
-  }
-  
-  .search-box input {
+}
+
+.search-box input {
     padding: 1rem;
     width: 100%;
     font-size: 1rem;
@@ -122,20 +122,20 @@ input:focus {
     border: 0;
     outline: 0;
     box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.3);
-  }
-  
-  .search-box i {
+}
+
+.search-box i {
     font-size: 1.3rem;
     cursor: pointer;
     position: absolute;
     right: 6%;
-  }
-  
-  .search-box input::placeholder {
+}
+
+.search-box input::placeholder {
     font-size: 1rem;
     font-weight: 500;
     color: var(--secondary-color);
-  }
+}
   
   /* search-bar */
 
@@ -146,7 +146,7 @@ input:focus {
 
 /* start  nav */
 .container {
-    padding: 0 80px;
+    padding: 0 30px;
 }
 header {
     background-color: #F5F6F9;
@@ -222,13 +222,11 @@ header .nav .links {
     display: flex;
     justify-content: space-between;
     gap: 100px;
-    flex: 1.6;
 }
 header .nav .links ul {
     display: flex;
     list-style: none;
-    gap: 20px;
-    padding: 40px 10px; 
+    gap: 20px; 
 }
 header .nav .links li {
     padding: 40px 10px; 
@@ -692,5 +690,3 @@ footer {
     text-align: center;
     color: var(--secondary-color);
 }
-
-
