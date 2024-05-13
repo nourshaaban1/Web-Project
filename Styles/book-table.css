@@ -71,3 +71,35 @@ table tr td {
     border: 0px;
     transform: scale(0.9);
 }
+
+.add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Add_Book{
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    /* margin-top: 60px; */
+    width: 200px;
+    height: 70px;
+    font-weight:bold;
+    font-size: large;
+    background-color: var(--secondary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;  
+    background: linear-gradient(to right, var(--secondary-color) 50%, white 50%);
+    background-size: 200% 100%; 
+    background-position: right bottom; 
+    transition: background-position 0.5s ease, transform 0.5s ease; 
+}
+
+.Add_Book:hover {
+    background-position: left bottom;
+    transform: scale(1.1);   
+    color: white;
+}
