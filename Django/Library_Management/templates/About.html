@@ -4,8 +4,8 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../scripts/about-us.js" defer></script>
-    <link rel="icon" type="image/png" href="{% static '../Photos/Icon.png' %}" sizes="32x32">
+    <script src="{% static 'scripts/about-us.js' %}" defer></script>
+    <link rel="icon" type="image/png" href="{% static 'Photos/Icon.png' %}" sizes="32x32">
     <link rel="stylesheet" href="{% static 'css/nav-bar.css' %}">
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
@@ -17,7 +17,6 @@
     <title>About us</title>
 </head>
 <body>
-
     <header>
         <nav>
             <div class="container">
@@ -49,7 +48,7 @@
                 <p>At cumque tenetur iste molestiae, vel eum reiciendis assumenda! Numquam, repudiandae. Consequuntur obcaecati recusandae aliquam, amet doloribus eius dolores officiis cumque? Quibusdam praesentium pariatur sapiente mollitia, amet hic iusto voluptas! Iusto quo earum vitae excepturi, ipsam aliquid deleniti assumenda culpa deserunt.</p>
                 <button>read more</button>
             </div>
-            <img src="../Photos/slider-img.png" alt="about">
+            <img src="{% static 'Photos/slider-img.png' %}" alt="about">
         </div>
     </section>
 

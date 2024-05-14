@@ -5,11 +5,11 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../scripts/all-books.js" defer></script>
+    <script src="{% static 'scripts/all-books.js' %}" defer></script>
     <title> Books </title>
-    <link rel="icon" type="image/png" href="{% static '../Photos/Icon.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'Photos/Icon.png' %}" sizes="32x32">
     <link rel="stylesheet" href="{% static 'css/nav-bar.css' %}">
-    <link rel="stylesheet" href="{% static 'css/all-book.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all-books.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,7 +82,7 @@
     </main>
 
     <footer>&copy; 2024 All Rights Reserved By FCAI-Developers</footer>
-    <script src="../scripts/search.js"></script>
+    <script src="{% static 'scripts/search.js' %}"></script>
 </body>
 
 </html>
