@@ -1,10 +1,23 @@
+<<<<<<< HEAD
 {% extends 'layout.html' %}
 {% load static %}
 
 {% block headers %}
     <script src="{% static 'scripts/about-us.js' %}" defer></script>
+=======
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'scripts/about-us.js' %}" defer></script>
+    <link rel="icon" type="image/png" href="{% static 'Photos/Icon.png' %}" sizes="32x32">
+    <link rel="stylesheet" href="{% static 'css/nav-bar.css' %}">
+>>>>>>> 72560ffb8122dbab982246d6d745c8af42bc0a8a
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
     <title>About us</title>
+<<<<<<< HEAD
 {% endblock %} 
 
 {% block content %}
@@ -14,6 +27,42 @@
             <h1>About Our Bookstore</h1>
             <p>At cumque tenetur iste molestiae, vel eum reiciendis assumenda! Numquam, repudiandae. Consequuntur obcaecati recusandae aliquam, amet doloribus eius dolores officiis cumque? Quibusdam praesentium pariatur sapiente mollitia, amet hic iusto voluptas! Iusto quo earum vitae excepturi, ipsam aliquid deleniti assumenda culpa deserunt.</p>
             <button>read more</button>
+=======
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="nav"> 
+                    <div class="logo"><h2><a href="{% url 'home' %}">Alphapet</a></h2></div>
+                    <div class="links">
+                        <ul id="main-links">
+                            <li><a href="{% url 'home' %}">home</a></li>
+                            <li><a href="{% url 'about' %}">about</a></li>
+                            <li><a href="{% url 'all-books' %}">books</a></li>
+                            <li><a href="{% url 'category' %}">categories</a></li>
+                        </ul>
+                        <div class="log">
+                            <ul>
+                                <li><a href="{% url 'account' %}">profile</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+    <section class="about">
+        <div class="container">
+            <div class="text-content">
+                <h1>About Our Bookstore</h1>
+                <p>At cumque tenetur iste molestiae, vel eum reiciendis assumenda! Numquam, repudiandae. Consequuntur obcaecati recusandae aliquam, amet doloribus eius dolores officiis cumque? Quibusdam praesentium pariatur sapiente mollitia, amet hic iusto voluptas! Iusto quo earum vitae excepturi, ipsam aliquid deleniti assumenda culpa deserunt.</p>
+                <button>read more</button>
+            </div>
+            <img src="{% static 'Photos/slider-img.png' %}" alt="about">
+>>>>>>> 72560ffb8122dbab982246d6d745c8af42bc0a8a
         </div>
         <img src="{% static 'Photos/slider-img.png' %}" alt="about">
     </div>

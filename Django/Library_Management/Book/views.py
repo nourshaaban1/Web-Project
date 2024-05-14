@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Book
+<<<<<<< HEAD
 
 def all_books(request):
     all_books = Book.objects.all()
@@ -19,3 +20,10 @@ def edit_book(request):
 
 def upload_book(request):
     return render(request, 'upload-book.html')
+=======
+
+def all_books(request):
+    all_books = Book.objects.all()
+    return render(request, 'Book\all-book.html', {'books' : Book})
+
+>>>>>>> 72560ffb8122dbab982246d6d745c8af42bc0a8a
