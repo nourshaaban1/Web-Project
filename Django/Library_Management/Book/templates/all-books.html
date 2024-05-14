@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block headers %}
+    <script src="{% static 'scripts/search.js' %}" defer></script>
+    <script src="{% static 'scripts/all-books.js' %}" defer></script>
+    <title> Books </title>
+    <link rel="stylesheet" href="{% static 'css/all-books.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+{% endblock %} 
+    
+{% block content %}
+<main>
+    <div class="search-container">
+        <div class="search-image">
+            
+        </div>
+    </div>
+
+    <div class="search-bar">
+        <div class="dropdown">
+          <div id="drop-text" class="dropdown-text">
+            <span id="span">Everything</span>
+            <i class='bx bx-caret-down' id="icon"></i>
+          </div>
+          <ul id="list" class="dropdown-list">
+            <li class="dropdown-list-item">by Title</li>
+            <li class="dropdown-list-item">by Category</li>
+            <li class="dropdown-list-item">by Author</li>
+          </ul>
+        </div>
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Search anything..." />
+          <i class='bx bx-search'></i>
+        </div>
+    </div>
+
+    <div class="book-container">
+        <h1>All Books :</h1>
+        <ul id="book-viewer">
+            {% for book in books %}
+                <a href = "book-page.html?isbn=${book.isbn}">
+                <img class="book" src="${{book.cover}}" alt="${{book.title}}">
+                </a><p>{{book.title}}</p><label>Avaliable</label>
+            {% endfor %}    
+        </ul>
+    </div>
+</main>
+{% endblock %} 

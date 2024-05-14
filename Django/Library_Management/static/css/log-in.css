@@ -126,6 +126,7 @@ header .nav .links ul li:hover  {
     font-weight: 700;
 }
 
+
 .login .info form input[type="text"],
 .login .info form input[type="password"] {
     box-shadow: 0px 0px 5px #0FA2B4;

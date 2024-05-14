@@ -1,5 +1,5 @@
 main {
-    background-image: url(../Photos/b5.jpg);
+    background-image: url('/static/Photos/b5.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     padding: 40px 40px;

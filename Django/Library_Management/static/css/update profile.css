@@ -12,7 +12,7 @@
   }
 
 body {
-  background-image: url(../Photos/beautiful-arrangement-different-books.jpg);
+  background-image: url('/static/Photos/beautiful-arrangement-different-books.jpg');
   background-size: cover;
   font-family:'Mulish', sans-serif;
 }

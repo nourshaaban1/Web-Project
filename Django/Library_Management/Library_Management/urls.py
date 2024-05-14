@@ -15,21 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.views.generic import RedirectView
 from . import views
+from user import views as ui
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('About.html/', views.about, name='about'),
-    path('account.html/', views.account, name='account'),
-    path('all-books.html/', views.all_books, name='all-books'),
-    path('book-page.html/', views.book_page, name='book-page'),
-    path('book-table.html/', views.book_table, name='book-table'),
     path('category.html/', views.category, name='category'),
-    path('edit-book.html/', views.edit_book, name='edit-book'),
     path('', views.home, name='home'),
-    path('log-in.html/', views.log_in, name='log-in'),
-    path('sign-in.html/', views.sign_in, name='sign-in'),
-    path('update-profile.html/', views.update_profile, name='update-profile'),
-    path('upload-book.html/', views.upload_book, name='upload-book'),
+    path('Book/', include('Book.urls')),
+    path('user/', include('user.urls')),
+    # path('Borrowed/', include('Borrowed.urls')),
+
+    
+    # path('', RedirectView.as_view(pattern_name='sign-in', permanent=False)),
 ]

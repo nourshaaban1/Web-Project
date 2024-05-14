@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block headers %}
+    <script src="{% static 'scripts/book-table.js' %}" defer></script>
+    <title>Books Avaliable</title>
+    <link rel="stylesheet" href="{% static 'css/book-table' %}">
+{% endblock %} 
+    
+{% block content %}
+    <main>
+        <div class="table-container">
+            <table id="book-table">
+                <tr>
+                    <th>Book Cover</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Edit</th>
+                </tr>
+            </table>
+        </div>
+        <div class="add"><button class="Add_Book" onclick="location.href='upload-book.html'">Add Book</button></div>
+    </main>
+{% endblock %} 
+
+  
