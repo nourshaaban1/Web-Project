@@ -41,8 +41,8 @@
         <p>Feel free to join as an admin or user to grow our community.</p>
       </div>
       <div class="register">
-<<<<<<< HEAD:Django/Library_Management/user/templates/sign-in.html
-        <form action="{% url 'home'%}" id="form">
+        <form action="{% url 'sign-in'%}" id="form" method="post">
+          {% csrf_token %}
           <section class="user">
             <label for="Email" >Email</label>
             <input type="email" name="Email" id="Email" placeholder="Email" >
@@ -51,9 +51,6 @@
             <p></p>
           </section>
 
-=======
-        <form action="{% url 'home.html'%}" id="form">
->>>>>>> 72560ffb8122dbab982246d6d745c8af42bc0a8a:Django/Library_Management/templates/sign-in.html
           <section class="user">
             <label for="Username" >Username</label>
             <input type="text" name="Username" id="Username" placeholder="Username" >
@@ -98,7 +95,7 @@
           
           <br>
           <br>
-
+          {% comment %} {{ form }} {% endcomment %}
           <input type="submit">
         </form>
       </div>

@@ -41,7 +41,8 @@
                 <h1>Login</h1>
                 <p>Welcome back! Please login to your account.</p>
             </div>
-            <form id="form" action="{% url 'home'%}">
+            <form id="form" action="{% url 'log-in'%}" method="post">
+                {% csrf_token %}
 
                 <div class="email-field">
                     <label for="Email" >Email:</label>
@@ -66,13 +67,15 @@
                     <div id="validation1"></div>
                 </div>
 
+                {% comment %} {{ form }} {% endcomment %}
+                {% if request.GET.next %}
+                    <input type="hidden" name="next" value="{{ request.GET.next }}" />
+                {% endif %}
+                
+
                 <div class="submit-field"><input type="submit" value="Login"></div>
             </form>
-<<<<<<< HEAD:Django/Library_Management/user/templates/log-in.html
             <p>Don't have an account? <a href="{% url 'sign-in'%}">Sign up here</a>.</p>
-=======
-            <p>Don't have an account? <a href="{% url 'sign-in.html'%}">Sign up here</a>.</p>
->>>>>>> 72560ffb8122dbab982246d6d745c8af42bc0a8a:Django/Library_Management/templates/log-in.html
         </div>
         <div class="img">
             <img src="{% static 'Photos/slider-img.png'%}" alt="">
@@ -81,3 +84,4 @@
     <footer>&copy; 2024 All Rights Reserved By FCAI-Developers</footer>
 </body>
 </html>
+
