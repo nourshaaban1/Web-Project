@@ -1,0 +1,58 @@
+.categories .content {
+    padding: 100px 0 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 60px;
+    /* margin: 0 auto; */
+}
+.categories .content div {
+    text-align: center;
+}
+
+body{
+    font-family:'Mulish', sans-serif;
+}
+
+.categories .content .heading {
+    color: #333;
+}
+.categories .content .heading h1 {
+    color: #333;
+    font-size: 35px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.categories .content .heading p {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.categories .content .cat-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+    row-gap: 30px;
+    column-gap: 40px;
+}
+.categories .cat-content div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.categories .cat-content div i {
+    font-size: 45px;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+.categories .cat-content div h2 {
+    font-weight: 600;
+    color: #333;
+}
+.categories .cat-content div p {
+    font-weight: 600;
+    color: #777;
+    width: 100%;
+    line-height: 1.4;
+    word-spacing: 2px;
+}

@@ -1,0 +1,169 @@
+main {
+    background-image: url(../Photos/b5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px 40px;
+    height: 1000px;   
+}
+
+.book-container {
+    width: 94%;
+    height: 90;
+    margin: 28px 40px;
+    padding: 15px;
+    background-color: rgba(237, 162, 78, 0.6);
+    display: flex;
+    border-radius: 12px;
+}
+
+body{
+    font-family:'Mulish', sans-serif;
+}
+
+.book-cover {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.book-detail {
+    padding: 0 12px;
+    margin: 0 12px;
+}
+
+.book-cover .book-img {
+    background-color: #363636;
+    border-radius: 12px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.book-cover .book-img .book-avaliable, .book-cover .book-img .book-edition {
+    margin-top: 12px;
+    font-weight: bold;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    color: var(--secondary-color);
+    width: 150px;
+    text-align: center;
+}
+
+.book-cover .book-img .book-wishlist {
+    margin-top: 12px;
+}
+
+.book-cover .book-img .book-borrow-button, .book-cover .book-img .book-wishlist-button {
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    /* margin-top: 60px; */
+    width: 150px;
+    font-weight: bold;
+    background-color: var(--secondary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;  
+    background: linear-gradient(to right, var(--secondary-color) 50%, white 50%);
+    background-size: 200% 100%; 
+    background-position: right bottom; 
+    transition: background-position 0.5s ease, transform 0.5s ease;   
+}
+
+.book-cover .book-img .book-borrow-button:hover, .book-cover .book-img .book-wishlist-button:hover, .book-cover .book-img .book-edit:hover {
+    background-position: left bottom;
+    transform: scale(1.1);   
+    color: white;
+}
+
+.book-cover .book-img .book-borrow-button:active, .book-cover .book-img .book-wishlist-button:active, .book-cover .book-img .book-edit:active {
+    border: 0px;
+    transform: scale(0.9);
+} 
+
+
+.book-cover .book-img .book-edit {
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    margin-top: 60px;
+    width: 150px;
+    font-weight: bold;
+    background-color: var(--secondary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    background: linear-gradient(to right, var(--secondary-color) 50%, white 50%);
+    background-size: 200% 100%; 
+    background-position: right bottom; 
+    transition: background-position 0.5s ease, transform 0.5s ease;    
+}
+
+.book-cover .book-img img {
+    width: 210px;
+    height: 240px;
+    border-radius: 12px;
+    justify-self: flex-start;
+}
+
+.book-cover .book-detail .book-title {
+    font-weight: bold;
+    font-size: 20px;
+    width: auto;
+    height: 30px;
+    margin-bottom: 12px;
+}
+
+.book-cover .book-detail .book-author {
+    margin-bottom: 12px;
+}
+
+.book-cover .book-detail .book-author span,
+.book-cover .book-detail .book-about span,
+.book-cover .book-detail .book-summary span,
+.book-cover .book-detail .book-category .category-label,
+.book-cover .book-detail .book-publisher .publisher-label,
+.book-cover .book-detail .pages,
+.book-cover .star-rating {
+    font-weight: bold;
+}
+
+.book-cover .book-detail .book-about,
+.book-cover .book-detail .book-summary,
+.book-cover .book-detail .book-category,
+.book-cover .book-detail .pages,
+.book-cover .star-rating {
+    margin-top: 40px;
+    margin-bottom: 12px;
+    margin-right: 4px;
+}
+
+.book-cover .book-detail .book-about section p, .book-cover .book-detail .book-summary section p {
+    direction: rtl;
+}
+
+.book-cover .star-rating {
+    font-size: 30px;
+    background-color: #363636;
+    width: 190px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.book-cover .star-rating .star, .book-cover .star-rating .rating {
+    color: white;
+}
+
+.book-cover .star-rating .rating .rating-degree {
+    font-size: 15px;
+}
+
+.book-cover .star-rating .num-rating {
+    font-size: 10px;
+    color: white;
+}
