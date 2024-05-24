@@ -28,7 +28,4 @@ urlpatterns = [
     path('Book/', include('Book.urls')),
     path('user/', include('user.urls')),
     # path('Borrowed/', include('Borrowed.urls')),
-
-    
-    # path('', RedirectView.as_view(pattern_name='sign-in', permanent=False)),
 ]

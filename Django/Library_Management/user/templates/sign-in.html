@@ -1,17 +1,17 @@
+<!DOCTYPE html>
 <html lang="en">
 {% load static %}
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="{% static '../Photos/Icon.png' %}" sizes="32x32">
-    <link rel="stylesheet" href="{% static 'css/sign-in.css' %}">
+  <link rel="icon" type="image/png" href="{% static 'Photos/Icon.png' %}" sizes="32x32">
+  <link rel="stylesheet" href="{% static 'css/sign-in.css' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-  <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
   <title>Sign-up Form</title>
-  <script src="../scripts/sign-in.js" defer></script>
+  <script src="{% static 'scripts/sign-in.js' %}" defer></script>
 </head>
 <body>
   <header>
@@ -41,47 +41,46 @@
         <p>Feel free to join as an admin or user to grow our community.</p>
       </div>
       <div class="register">
-        <form action="{% url 'sign-in'%}" id="form" method="post">
+        <form action="{% url 'sign-in' %}" method="POST">
           {% csrf_token %}
           <section class="user">
-            <label for="Email" >Email</label>
-            <input type="email" name="Email" id="Email" placeholder="Email" >
+            <label for="id_email">Email</label>
+            {{ form.email }}
             <i class='bx bxs-check-circle' id="check"></i>
             <i class='bx bxs-x-circle' id="wrong"></i>
-            <p></p>
+            <p>{% if form.email.errors %} <p class="error">{{ form.email.errors }}</p> {% endif %}</p>
           </section>
 
           <section class="user">
-            <label for="Username" >Username</label>
-            <input type="text" name="Username" id="Username" placeholder="Username" >
+            <label for="id_username">Username</label>
+            {{ form.username }}
             <i class='bx bxs-check-circle' id="check"></i>
             <i class='bx bxs-x-circle' id="wrong"></i>
-            <p></p>
+            <p>{% if form.username.errors %} <p class="error">{{ form.username.errors }}</p> {% endif %}</p>
           </section>
 
           <section class="Password">
-            <label for="Password">Password</label>
-            <input type="password" name="Password" id="Password" placeholder="Password" >
+            <label for="id_password1">Password</label>
+            {{ form.password1 }}
             <i class='bx bxs-check-circle' id="check"></i>
             <i class='bx bxs-x-circle' id="wrong"></i>
-            <p></p>
-          </section>
-
-          <section class="confirm">
-            
-            <label for="confirm-Password">Confirm Password</label>
-            <input type="password" name="confirm-Password" id="confirm-Password" placeholder="Confirm Password" >
+            <p>{% for error in form.password1.errors %} <p class="error">{{ error }}</p> {% endfor %}</p>
+        </section>
+        
+        <section class="confirm">
+            <label for="id_password2">Confirm Password</label>
+            {{ form.password2 }}
             <i class='bx bxs-check-circle' id="check"></i>
             <i class='bx bxs-x-circle' id="wrong"></i>
-            <p></p>
-            
-          </section>
+            <p>{% if form.password2.errors %} <p class="error">{{ form.password2.errors }}</p> {% endif %}</p>
+        </section>
 
-            <br>
+          <br>
 
           <label for="user" style="font-size: 16px; display: inline-block;" class="radio">
             User
             <input type="radio" name="type" id="user" value="user" checked> 
+            {{ form.user_type.user}}
             <span></span>
           </label>
           
@@ -90,13 +89,13 @@
           <label for="admin" style="font-size: 16px; display: inline-block;" class="radio">
             Admin
             <input type="radio" name="type" id="admin" value="admin">
+            {{ form.user_type.admin}}
             <span></span>
           </label> 
           
           <br>
           <br>
-          {% comment %} {{ form }} {% endcomment %}
-          <input type="submit">
+          <input type="submit" value="Sign In">
         </form>
       </div>
     </div>
