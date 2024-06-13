@@ -261,16 +261,3 @@ header .nav .links ul li:hover  {
     border: 1px solid  #0FA2B4;
     color: #0FA2B4;
 }
-/* End Sign-up */
-
-footer {
-    padding: 25px;
-    text-align: center;
-    color: var(--secondary-color);
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    left: 50%;
-    transform: translateX(-50%)
-}

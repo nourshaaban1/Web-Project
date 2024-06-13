@@ -1,13 +1,15 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
-import uuid
 
-# Create your models here.
-class User(models.Model):
-    user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    username = models.CharField(max_length=255)
-    email = models.EmailField()
-    password = models.CharField(max_length=255)
-    user_type = models.CharField(max_length=50)
+class customUser(AbstractUser):
+    email = models.EmailField(unique=True)
 
-    def __str__(self):
-        return self.username
+    class Meta:
+        # Assuming 'user' is the name of your app containing the CustomUser model
+        db_table = 'user_customuser'  # Specify the table name in the database if needed
+        verbose_name = 'Custom User'
+        verbose_name_plural = 'Custom Users'
+
+# Provide related_name for groups and user_permissions fields
+customUser.groups.field.related_name = 'customuser_groups'
+customUser.user_permissions.field.related_name = 'customuser_permissions'

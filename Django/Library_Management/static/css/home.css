@@ -143,10 +143,6 @@ input:focus {
 /* end global  */
 
 /* start header */
-
-/* start  nav */
-
-/* end nav */
 header section {
     height: calc(100vh - 80px);
     display: flex;

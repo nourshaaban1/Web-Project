@@ -11,8 +11,8 @@ body {
     overflow-x: hidden;
     font-family:'Mulish', sans-serif;
 }
-.container {
-    padding: 0 30px;
+.container11 {
+    padding: 0px 30px;
 }
 
 header {
@@ -60,7 +60,7 @@ header .nav .logo h2::first-letter {
 header .nav .links {
     display: flex;
     justify-content: space-between;
-    gap: 100px;
+    gap: 80px;
 }
 header .nav .links ul {
     display: flex;

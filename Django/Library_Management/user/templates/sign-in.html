@@ -1,106 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout.html' %}
 {% load static %}
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="{% static 'Photos/Icon.png' %}" sizes="32x32">
-  <link rel="stylesheet" href="{% static 'css/sign-in.css' %}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-  <title>Sign-up Form</title>
-  <script src="{% static 'scripts/sign-in.js' %}" defer></script>
-</head>
-<body>
-  <header>
-    <nav>
-      <div class="container">
-        <div class="nav"> 
-          <div class="logo"><h2><a href="{% url 'home' %}">Alphapet</a></h2></div>
-            <div class="links">
-                <ul>
-                </ul>
-                <div class="log">
-                    <ul>
-                        <li><a href="{% url 'log-in' %}">Log in</a></li>
-                        <li><a href="{% url 'sign-in' %}">Sign in</a></li>
-                    </ul>
-                </div>
-            </div>
-          </div>
-      </div>
-    </nav>
-  </header>
-  <!-- Sign-up form start -->
-  <div class="sign-up">
-    <div class="info">
-      <div class="header">
-        <h1>Join Our Library!</h1>
-        <p>Feel free to join as an admin or user to grow our community.</p>
-      </div>
-      <div class="register">
-        <form action="{% url 'sign-in' %}" method="POST">
-          {% csrf_token %}
-          <section class="user">
-            <label for="id_email">Email</label>
-            {{ form.email }}
-            <i class='bx bxs-check-circle' id="check"></i>
-            <i class='bx bxs-x-circle' id="wrong"></i>
-            <p>{% if form.email.errors %} <p class="error">{{ form.email.errors }}</p> {% endif %}</p>
-          </section>
 
-          <section class="user">
-            <label for="id_username">Username</label>
-            {{ form.username }}
-            <i class='bx bxs-check-circle' id="check"></i>
-            <i class='bx bxs-x-circle' id="wrong"></i>
-            <p>{% if form.username.errors %} <p class="error">{{ form.username.errors }}</p> {% endif %}</p>
-          </section>
+{% block headers %}
+    {% comment %} <script src="{% static 'scripts/sign-in.js' %}" defer></script> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/sign-in.css' %}">
+    <title>Sign-up</title>
+{% endblock %}
 
-          <section class="Password">
-            <label for="id_password1">Password</label>
-            {{ form.password1 }}
-            <i class='bx bxs-check-circle' id="check"></i>
-            <i class='bx bxs-x-circle' id="wrong"></i>
-            <p>{% for error in form.password1.errors %} <p class="error">{{ error }}</p> {% endfor %}</p>
-        </section>
-        
-        <section class="confirm">
-            <label for="id_password2">Confirm Password</label>
-            {{ form.password2 }}
-            <i class='bx bxs-check-circle' id="check"></i>
-            <i class='bx bxs-x-circle' id="wrong"></i>
-            <p>{% if form.password2.errors %} <p class="error">{{ form.password2.errors }}</p> {% endif %}</p>
-        </section>
 
-          <br>
-
-          <label for="user" style="font-size: 16px; display: inline-block;" class="radio">
-            User
-            <input type="radio" name="type" id="user" value="user" checked> 
-            {{ form.user_type.user}}
-            <span></span>
-          </label>
-          
-          <br>
-
-          <label for="admin" style="font-size: 16px; display: inline-block;" class="radio">
-            Admin
-            <input type="radio" name="type" id="admin" value="admin">
-            {{ form.user_type.admin}}
-            <span></span>
-          </label> 
-          
-          <br>
-          <br>
-          <input type="submit" value="Sign In">
-        </form>
-      </div>
+{% block content %}
+<div class="sign-up">
+  <div class="info">
+    <div class="header">
+      <h1>Join Our Library!</h1>
+      <p>Feel free to join as an admin or user to grow our community.</p>
     </div>
-    <div class="img"></div>
+    <div class="register">
+      <form action="{% url 'sign-in' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="id_email">Email</label>
+          {{ form.email }}
+          {% if form.email.errors %}
+            <div class="error">{{ form.email.errors }}</div>
+          {% endif %}
+        </div>
+        <div class="form-group">
+          <label for="id_username">Username</label>
+          {{ form.username }}
+          {% if form.username.errors %}
+            <div class="error">{{ form.username.errors }}</div>
+          {% endif %}
+        </div>
+        <div class="form-group">
+          <label for="id_password1">Password</label>
+          {{ form.password1 }}
+          {% for error in form.password1.errors %}
+            <div class="error">{{ error }}</div>
+          {% endfor %}
+        </div>
+        <div class="form-group">
+          <label for="id_password2">Confirm Password</label>
+          {{ form.password2 }}
+          {% if form.password2.errors %}
+            <div class="error">{{ form.password2.errors }}</div>
+          {% endif %}
+        </div>
+        <input type="submit" value="Sign Up">
+      </form>
+    </div>
   </div>
-  <footer>&copy; 2024 All Rights Reserved By FCAI-Developers</footer>
-</body>
-</html>
+  <div class="img"></div>
+</div>
+{% endblock %} 
