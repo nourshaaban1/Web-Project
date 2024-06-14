@@ -3,6 +3,7 @@ from django.db import models
 
 class customUser(AbstractUser):
     email = models.EmailField(unique=True)
+    pic = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
 
     class Meta:
         # Assuming 'user' is the name of your app containing the CustomUser model

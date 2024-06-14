@@ -9,58 +9,157 @@
     
 {% block content %}
     <main>
-        <form class="upload-form" id="upload-form">
+        <form class="upload-form" id="upload-form" method="POST">
+            {% csrf_token %}
             <h2 class="info-header">Add New book</h2>
             <ul class="info-list">
+                <!-- Title Field -->
                 <li class="info-item">
                     <label for="book-title">Book title:</label>
-                    <input id="book-title" type="text" required>
+                    {{ form.title }}
+                    {% if form.title.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.title.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </li>
+                
+                <!-- Author Field -->
                 <li class="info-item">
                     <label for="author">Author name:</label>
-                    <input id="author" type="text" required>
+                    {{ form.author }}
+                    {% if form.author.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.author.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </li>
+                
+                <!-- Publisher Field -->
                 <li class="info-item">
                     <label for="publisher">Publisher:</label>
-                    <input id="publisher" type="text" required>
+                    {{ form.publisher }}
+                    {% if form.publisher.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.publisher.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </li>
+                
+                <!-- Category Field -->
                 <li class="info-item">
                     <label for="category">Categories:</label>
-                    <input id="category" type="text" required>
+                    {{ form.category }}
+                    {% if form.category.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.category.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </li>
+                
+                <!-- ISBN Field -->
                 <li class="info-item">
                     <label for="isbn">ISBN:</label>
-                    <input id="isbn" type="text" required>
+                    {{ form.isbn }}
+                    {% if form.isbn.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.isbn.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </li>
+                
+                <!-- Pages Field -->
                 <div class="small-list">
                     <li class="info-item">
                         <label for="pages">No.Pages:</label>
-                        <input id="pages" type="number" required>
+                        {{ form.pages }}
+                        {% if form.pages.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.pages.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </li>
+                    
+                    <!-- Edition Field -->
                     <li class="info-item">
                         <label for="edition">Edition:</label>
-                        <input id="edition" type="number" required>
+                        {{ form.edition }}
+                        {% if form.edition.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.edition.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </li>
+                    
+                    <!-- Rating Field -->
                     <li class="info-item">
                         <label for="rating">Rating(Out of 5):</label>
-                        <input id="rating" type="text" required>
+                        {{ form.rating }}
+                        {% if form.rating.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.rating.errors %}
+                                    <li>{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </li>
                 </div>
+                
+                <!-- About Field -->
                 <li class="info-item">
                     <label for="about">About book:</label>
-                    <textarea id="about" type="text" required></textarea>   
+                    {{ form.about }}
+                    {% if form.about.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.about.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </li>
+                
+                <!-- Summary Field -->
                 <li class="info-item">
                     <label for="summary">Summary:</label>
-                    <textarea id="summary" type="text" required></textarea>
+                    {{ form.summary }}
+                    {% if form.summary.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.summary.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </li>
+                
+                <!-- Book Cover URL Field -->
                 <li class="info-item">
                     <label for="book-cover">Book cover URL:</label>
-                    <input id="book-cover" type="text" required>    
+                    {{ form.cover }}
+                    {% if form.cover.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.cover.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </li>
             </ul>
-            <button type="submit" value="upload">Upload</button>
-            <button type="reset" value="reset">Reset</button>
+            <button type="submit">Upload</button>
+            <button type="reset">Reset</button>
         </form>
     </main>
 {% endblock %}

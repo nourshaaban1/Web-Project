@@ -1,62 +1,77 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/png" href="{% static 'Photos/Icon.png' %}" sizes="32x32">
-        <link rel="stylesheet" href="{% static 'css/nav-bar.css' %}">
-        <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-        {% block headers %}
-
-        {% endblock %}
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div class="container11">
-                    <div class="nav"> 
-                        <div class="logo"><h2><a href="{% url 'home' %}">Alphapet</a></h2></div>
-                        <div class="links">
-                            <ul id="main-links">
-                                <li><a href="{% url 'home' %}">home</a></li>
-                                <li><a href="{% url 'about' %}">about</a></li>
-                                <li><a href="{% url 'all-books' %}">books</a></li>
-                                <li><a href="{% url 'category' %}">categories</a></li>
-                            </ul>
-                            <div class="log">
-                                <ul>
-                                    {% if user.is_authenticated %}
-                                        {% if user.is_superuser %}
-                                            <li><a href="{% url 'book-table' %}">manage</a></li>
-                                        {% endif %}
-                                        <li><a href="{% url 'account' %}">profile</a></li>
-                                        <li>
-                                            <form action="{% url 'logout' %}" method="post">
-                                                {% csrf_token %}
-                                                <button type="submit" class="Btn1">Logout</button>
-                                            </form>
-                                        </li>
-                                    {% else %}
-                                        <li><a href="{% url 'log-in' %}">Login</a></li>
-                                        <li><a href="{% url 'sign-in' %}">Sign-up</a></li>
-                                    {% endif %}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            {% block after-nav %}
-
-            {% endblock %}
-        </header>
-        {% block content %}
-
-        {% endblock %}
-        <footer>&copy; 2024 All Rights Reserved By FCAI-Developers</footer>     
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'Photos/Icon.png' %}"
+      sizes="32x32"
+    />
+    <link rel="stylesheet" href="{% static 'css/nav-bar.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+    {% block headers %} {% endblock %}
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container11">
+          <div class="nav">
+            <div class="logo">
+              <h2><a href="{% url 'home' %}">Alphapet</a></h2>
+            </div>
+            <div class="links">
+              <ul id="main-links">
+                <li><a href="{% url 'home' %}">home</a></li>
+                <li><a href="{% url 'about' %}">about</a></li>
+                <li><a href="{% url 'all-books' %}">books</a></li>
+                <li><a href="{% url 'category' %}">categories</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'Borrowed-books' %}">Your books</a></li>
+                {% endif %}
+              </ul>
+              <div class="log">
+                <ul>
+                  {% if user.is_authenticated %}
+                    {% if user.is_superuser %}
+                    <li><a href="{% url 'book-table' %}">manage</a></li>
+                    {% endif %}
+                    <li style="width: 80px; height: 80px; border-radius: 50%; display: flex; justify-content: center; align-items: center;  margin-top:10px ;">
+                        <a href="{% url 'account' %}">
+                            {% if user.pic %}
+                                <img src="{{ user.pic.url }}" alt="Profile Image" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; display:relative; margin-top:10px ;">
+                            {% else %}
+                                <img src="{% static 'Photos/UserIcon2.png' %}" alt="Profile Image" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                            {% endif %}
+                        </a>
+                    </li>
+                    <li>
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="logout-btn">Logout</button>
+                        </form>
+                    </li>
+                  {% else %}
+                  <li><a href="{% url 'log-in' %}">Login</a></li>
+                  <li><a href="{% url 'sign-in' %}">Sign-up</a></li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      {% block after-nav %} {% endblock %}
+    </header>
+    {% block content %} {% endblock %}
+    <footer>&copy; 2024 All Rights Reserved By FCAI-Developers</footer>
+  </body>
 </html>

@@ -14,7 +14,7 @@ class Book(models.Model):
     about = models.TextField(null=True, blank=True)
     summary = models.TextField(null=True, blank=True)
     cover = models.CharField(max_length=255, null=True, blank=True)
-    status = models.CharField(max_length=30)
+    status = models.CharField(max_length=30,null=True, blank=True)
     
     def __str__(self):
         return self.title

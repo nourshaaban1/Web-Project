@@ -37,3 +37,17 @@ class SignUpForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+
+
+class UpdateProfileForm(forms.Form):
+
+    new_username = forms.CharField(max_length=150, required=False)
+    old_password = forms.CharField(widget=forms.PasswordInput, required=False)
+    new_password = forms.CharField(widget=forms.PasswordInput, required=False)
+    confirm_new_password = forms.CharField(widget=forms.PasswordInput, required=False)
+    pic = forms.ImageField(required=False)
+
+    class Meta:
+        model = customUser
+        fields = ['new_username', 'old_password', 'new_password', 'confirm_new_password', 'pic']

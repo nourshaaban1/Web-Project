@@ -60,7 +60,7 @@ header .nav .logo h2::first-letter {
 header .nav .links {
     display: flex;
     justify-content: space-between;
-    gap: 100px;
+    gap: 80px;
 }
 header .nav .links ul {
     display: flex;

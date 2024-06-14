@@ -582,9 +582,3 @@ header section img {
     color: var(--secondary-color);
 }
 /* end About-Us */
-
-footer {
-    padding: 25px;
-    text-align: center;
-    color: var(--secondary-color);
-}

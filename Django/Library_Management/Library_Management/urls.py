@@ -19,6 +19,8 @@ from django.urls import path, include
 from django.views.generic import RedirectView
 from . import views
 from user import views as ui
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +29,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('Book/', include('Book.urls')),
     path('user/', include('user.urls')),
-    # path('Borrowed/', include('Borrowed.urls')),
+    path('Borrowed/', include('Borrowed.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -14,14 +14,15 @@
         <h2>change your account Info</h2>
         <br>
         <br>
-        <form id="form" action="#">
-            <input placeholder="New Username" class="input" name="text" type="text">
+        <form id="form" action="{% url 'update-profile' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input placeholder="New Username" class="input" name="new_username" type="text">
             <br>
-            <input placeholder="old password" class="input" name="text" type="text">
+            <input placeholder="old password" class="input" name="old_password" type="text">
             <br>
-            <input placeholder="New password" class="input" name="text" type="text">
+            <input placeholder="New password" class="input" name="new_password" type="text">
             <br>
-            <input placeholder="confirm New password" class="input" name="text" type="text">
+            <input placeholder="confirm New password" class="input" name="confirm_new_password" type="text">
             <div class="pic">
                 <label for="file" class="custum-file-upload">
                     <div class="icon">
@@ -38,7 +39,7 @@
                     <div class="text">
                         <span>upload image</span>
                     </div>
-                    <input id="file" type="file">
+                    <input id="file" name="pic" type="file">
                 </label>
             </div>
             <br>

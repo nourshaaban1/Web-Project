@@ -39,11 +39,14 @@
 
     <div class="book-container">
         <h1>All Books :</h1>
-        <ul id="book-viewer">
+        <ul>
             {% for book in books %}
-                <a href = "book-page.html?isbn=${book.isbn}">
-                <img class="book" src="${{book.cover}}" alt="${{book.title}}">
-                </a><p>{{book.title}}</p><label>Avaliable</label>
+            <li>
+              <a href="book-page.html?isbn={{ book.isbn }}">
+              <img class="book" src="{{ book.cover }}" alt="{{ book.title }}">
+              </a><p>{{ book.title }}</p>
+              <label>{{ book.status }}</label>
+            </li>
             {% endfor %}    
         </ul>
     </div>

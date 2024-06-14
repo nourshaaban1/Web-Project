@@ -5,14 +5,17 @@
     <script src="{% static 'scripts/account.js' %}" defer></script>
     <link rel="stylesheet" href="{% static 'css/account.css' %}">
     <title>Account Page</title>
-{% endblock %} 
-    
+{% endblock %}
+
 {% block content %}
 <div class="Elgen">
     <div class="container1">
-        <img src="{% static 'Photos/UserIcon2.png' %}" height="150px" alt="Profile Image">
-
         {% if user.is_authenticated %}
+        {% if user.pic %}
+        <img src="{{ user.pic.url }}" height="150px" alt="Profile Image">
+        {% else %}
+        <img src="{% static 'Photos/UserIcon2.png' %}" height="150px" alt="Profile Image">
+        {% endif %}
         <h1>Welcome: {{ user.username }}</h1>
         <ul>
             <li><strong>Username:</strong> {{ user.username }}</li>
@@ -27,6 +30,7 @@
             </svg>
         </button>
         {% else %}
+        <img src="{% static 'Photos/UserIcon2.png' %}" height="150px" alt="Profile Image">
         <h1>Welcome: Guest</h1>
         <br>
         <p>Please <a href="{% url 'log-in' %}">log in</a> or <a href="{% url 'sign-in' %}">sign up</a> to view your account.</p>
