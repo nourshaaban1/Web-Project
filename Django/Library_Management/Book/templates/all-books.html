@@ -1,11 +1,10 @@
 {% extends 'layout.html' %}
 {% load static %}
 
-
 {% block headers %}
     <script src="{% static 'scripts/search.js' %}" defer></script>
     <script src="{% static 'scripts/all-books.js' %}" defer></script>
-    <title> Books </title>
+    <title>Books</title>
     <link rel="stylesheet" href="{% static 'css/all-books.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -15,40 +14,71 @@
 <main>
     <div class="search-container">
         <div class="search-image">
-            
+            <!-- Search image or logo -->
         </div>
     </div>
 
     <div class="search-bar">
         <div class="dropdown">
-          <div id="drop-text" class="dropdown-text">
-            <span id="span">Everything</span>
-            <i class='bx bx-caret-down' id="icon"></i>
-          </div>
-          <ul id="list" class="dropdown-list">
-            <li class="dropdown-list-item">by Title</li>
-            <li class="dropdown-list-item">by Category</li>
-            <li class="dropdown-list-item">by Author</li>
-          </ul>
+            <div id="drop-text" class="dropdown-text">
+                <span id="span">Everything</span>
+                <i class='bx bx-caret-down' id="icon"></i>
+            </div>
+            <ul id="list" class="dropdown-list">
+                <li class="dropdown-list-item">by Title</li>
+                <li class="dropdown-list-item">by Category</li>
+                <li class="dropdown-list-item">by Author</li>
+            </ul>
         </div>
         <div class="search-box">
-          <input type="text" id="search-input" placeholder="Search anything..." />
-          <i class='bx bx-search'></i>
+            <input type="text" id="search-input" placeholder="Search anything..." />
+            <i class='bx bx-search'></i>
         </div>
     </div>
 
     <div class="book-container">
-        <h1>All Books :</h1>
+        <h1 style="height: 90px; width: 150px;">All Books:</h1>
         <ul>
             {% for book in books %}
             <li>
-              <a href="book-page.html?isbn={{ book.isbn }}">
-              <img class="book" src="{{ book.cover }}" alt="{{ book.title }}">
-              </a><p>{{ book.title }}</p>
-              <label>{{ book.status }}</label>
+                <a href="{% url 'book-page' book.isbn %}">
+                    <img class="book" src="{{ book.cover }}" alt="{{ book.title }}">
+                </a>
+                <p>{{ book.title }}</p>
+                <label>{{ book.status }}</label>
+            </li>
+            {% endfor %}    
+        </ul>
+    </div>
+
+    <div class="book-container">
+        <h1 style="height: 90px; width: 150px;">Available Books:</h1>
+        <ul>
+            {% for book in available_books %}
+            <li>
+                <a href="{% url 'book-page' book.isbn %}">
+                    <img class="book" src="{{ book.cover }}" alt="{{ book.title }}">
+                </a>
+                <p>{{ book.title }}</p>
+                <label>{{ book.status }}</label>
+            </li>
+            {% endfor %}    
+        </ul>
+    </div>
+
+    <div class="book-container">
+        <h1 style="height: 90px; width: 150px;">Unavailable Books:</h1>
+        <ul>
+            {% for book in unavailable_books %}
+            <li>
+                <a href="{% url 'book-page' book.isbn %}">
+                    <img class="book" src="{{ book.cover }}" alt="{{ book.title }}">
+                </a>
+                <p>{{ book.title }}</p>
+                <label>{{ book.status }}</label>
             </li>
             {% endfor %}    
         </ul>
     </div>
 </main>
-{% endblock %} 
+{% endblock %}

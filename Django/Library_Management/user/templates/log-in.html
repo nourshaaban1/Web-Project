@@ -28,10 +28,10 @@
       <div class="submit-field"><input type="submit" value="Login"></div>
     </form>
     
-    {% if error %}
-      <p style="color: red;">{{ error }}</p>
-    {% endif %}
     <p>Don't have an account? <a href="{% url 'sign-in' %}">Sign up here</a>.</p>
+    {% if form.non_field_errors %}
+      <p style = "color:red;">incorrect username or password</p>
+    {% endif %}
   </div>
   <div class="img">
     <img src="{% static 'Photos/slider-img.png' %}" alt="">

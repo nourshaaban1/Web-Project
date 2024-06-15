@@ -1,21 +1,40 @@
 from django.shortcuts import render, redirect
 from .models import Book
 from .forms import BookForm 
+from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse
 
 
 
 def all_books(request):
-    books = Book.objects.all()  # Query to get all books
-    return render(request, 'all-books.html', {'books': books})
+    available_books = Book.objects.filter(status='Available')
+    unavailable_books = Book.objects.filter(status='Unavailable')
+    return render(request, 'all-books.html', {
+        'available_books': available_books,
+        'unavailable_books': unavailable_books,
+        'books': available_books | unavailable_books,  # For the combined "All Books" section
+    })
 
-def book_page(request):
-    return render(request, 'book-page.html')
+def book_page(request, isbn):
+    book = get_object_or_404(Book, isbn=isbn)
+    return render(request, 'book-page.html', {'book': book})
 
 def book_table(request):
-    return render(request, 'book-table.html')
+    books = Book.objects.all()
+    return render(request, 'book-table.html', {'books': books})
 
-def edit_book(request):
-    return render(request, 'edit-book.html')
+def edit_book(request, isbn):
+    book = get_object_or_404(Book, isbn=isbn)
+    
+    if request.method == 'POST':
+        form = BookForm(request.POST, instance=book)
+        if form.is_valid():
+            form.save()
+            return redirect('book-table')  # Redirect to book table or other appropriate page
+    else:
+        form = BookForm(instance=book)
+    
+    return render(request, 'edit-book.html', {'form': form, 'book': book})
 
 def upload_book(request):
     if request.method == 'POST':
@@ -34,7 +53,7 @@ def upload_book(request):
                 about=form.cleaned_data['about'],
                 summary=form.cleaned_data['summary'],
                 cover=form.cleaned_data['cover'],
-                status='Available'  # Set initial status
+                status=form.cleaned_data['status'],
             )
             new_book.save()  # Save the new book object
             return redirect('all-books')  # Redirect to all-books page after successful upload
@@ -42,3 +61,15 @@ def upload_book(request):
         form = BookForm()  # Create an empty form instance for GET request
 
     return render(request, 'upload-book.html', {'form': form})
+
+
+def delete_book(request, isbn):
+    if request.method == 'POST':
+        try:
+            book = get_object_or_404(Book, isbn=isbn)
+            book.delete()
+            return JsonResponse({'message': 'Book deleted successfully.'})
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=400)
+    else:
+        return JsonResponse({'error': 'Invalid request method.'}, status=405)

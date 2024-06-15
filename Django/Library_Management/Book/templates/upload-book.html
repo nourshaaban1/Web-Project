@@ -157,6 +157,15 @@
                         </ul>
                     {% endif %}
                 </li>
+
+                <!-- Book status Field -->
+                <li class="info-item">
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="Available">Available</option>
+                        <option value="Unavailable">Unavailable</option>
+                    </select>
+                </li>
             </ul>
             <button type="submit">Upload</button>
             <button type="reset">Reset</button>

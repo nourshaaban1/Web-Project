@@ -4,8 +4,8 @@ from . import views
 
 urlpatterns = [
     path('all-books.html/', views.all_books, name='all-books'),
-    path('book-page.html/', views.book_page, name='book-page'),
-    path('book-table.html/', views.book_table, name='book-table'),
-    path('edit-book.html/', views.edit_book, name='edit-book'),
+    path('book-page/<str:isbn>/', views.book_page, name='book-page'),
+    path('book-table/', views.book_table, name='book-table'),
+    path('edit-book.html/<str:isbn>/', views.edit_book, name='edit-book'),
     path('upload-book.html/', views.upload_book, name='upload-book'),
 ]

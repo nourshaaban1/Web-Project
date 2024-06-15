@@ -42,7 +42,7 @@ def logout_user(request):
 @login_required
 def update_profile(request):
     if request.method == 'POST':
-        form = UpdateProfileForm(request.POST, request.FILES)
+        form = UpdateProfileForm(request.POST, request.FILES, user=request.user)
         if form.is_valid():
             new_username = form.cleaned_data.get('new_username')
             old_password = form.cleaned_data.get('old_password')
@@ -50,11 +50,14 @@ def update_profile(request):
             confirm_new_password = form.cleaned_data.get('confirm_new_password')
             profile_picture = form.cleaned_data.get('pic')
 
-            # Update username if provided
-            if new_username:
-                request.user.username = new_username
-                request.user.save()
-                messages.success(request, 'Username updated successfully.')
+            # Update username if provided and check for uniqueness
+            if new_username and new_username != request.user.username:
+                if customUser.objects.filter(username=new_username).exists():
+                    messages.error(request, 'Username already exists. Please choose a different one.')
+                else:
+                    request.user.username = new_username
+                    request.user.save()
+                    messages.success(request, 'Username updated successfully.')
 
             # Update password if old password and new password fields are provided
             if old_password and new_password and confirm_new_password:
@@ -77,6 +80,6 @@ def update_profile(request):
 
             return redirect('account')  # Redirect to account page after form submission
     else:
-        form = UpdateProfileForm()  # Create an empty form instance for GET request
+        form = UpdateProfileForm(user=request.user)  # Populate form with current user instance
 
     return render(request, 'update-profile.html', {'form': form})

@@ -3,6 +3,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import UserCreationForm
 from .models import customUser
+from django.contrib.auth import authenticate
 
 class SignUpForm(UserCreationForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
@@ -51,3 +52,37 @@ class UpdateProfileForm(forms.Form):
     class Meta:
         model = customUser
         fields = ['new_username', 'old_password', 'new_password', 'confirm_new_password', 'pic']
+
+    def clean_new_username(self):
+        new_username = self.cleaned_data.get('new_username')
+        
+        if new_username:
+            existing_user = customUser.objects.filter(username=new_username).exists()
+            if existing_user:
+                raise forms.ValidationError('Username already exists. Please choose a different one.')
+
+        return new_username
+    
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+
+    def clean(self):
+        cleaned_data = super().clean()
+        new_password = cleaned_data.get('new_password')
+        confirm_new_password = cleaned_data.get('confirm_new_password')
+        old_password = cleaned_data.get('old_password')
+
+        if new_password and confirm_new_password:
+            if not old_password:
+                raise forms.ValidationError('Please enter your old password to change it.')
+
+            # Authenticate user with old password
+            user = authenticate(username=self.user.username, password=old_password)
+            if not user:
+                raise forms.ValidationError('Incorrect old password.')
+
+            if new_password != confirm_new_password:
+                raise forms.ValidationError('Passwords do not match.')
+
+        return cleaned_data  

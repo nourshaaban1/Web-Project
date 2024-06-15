@@ -2,6 +2,12 @@ from django.db import models
 
 # Create your models here.
 class Book(models.Model):
+    STATUS_CHOICES = [
+        ('Available', 'Available'),
+        ('Unavailable', 'Unavailable'),
+    ]
+
+
     book_id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
@@ -14,7 +20,7 @@ class Book(models.Model):
     about = models.TextField(null=True, blank=True)
     summary = models.TextField(null=True, blank=True)
     cover = models.CharField(max_length=255, null=True, blank=True)
-    status = models.CharField(max_length=30,null=True, blank=True)
+    status = models.CharField(max_length=30, choices=STATUS_CHOICES, default='Available')
     
     def __str__(self):
         return self.title
