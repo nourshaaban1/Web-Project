@@ -20,8 +20,8 @@
         <ul>
             <li><strong>Username:</strong> {{ user.username }}</li>
             <li><strong>Email:</strong> {{ user.email }}</li>
-            <li><strong>Membership Type:</strong> Standard</li>
-            <li><strong>Borrowed books:</strong> 1</li>
+            <li><strong>Membership Type:</strong> {% if user.is_superuser %}Owner{% else %}Standard{% endif %}</li>
+                <li><strong>Borrowed books:</strong> {{ borrowings_count }}</li>
         </ul>
         <button class="Btn" onclick="location.href='{% url 'update-profile' %}'">Edit
             <svg class="svg" viewBox="0 0 512 512">

@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block headers %}
+    <script src="{% static 'js/book-page.js' %}" defer></script>
+    <title>{{ book.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/book-page.css' %}">
+{% endblock %} 
+    
+{% block content %}
+<main>
+    <div class="book-container" id="book-container">
+        <div class="book-cover">
+            <div class="book-img">
+                <img src="{{ book.cover }}" alt="{{ book.title }}">
+                <p class="book-edition">- {{ book.edition }} Edition -</p>                
+            </div>
+            <div class="book-detail">
+                <p class="book-title">{{ book.title }}</p>
+                <p class="book-author"><span>Author :</span>{{ book.author }}</p>
+                
+                <div class="book-about">
+                    <span>About : </span>
+                    <section>
+                        <p>{{ book.about }}</p>  
+                    </section>
+                </div>
+
+                <div class="book-summary">
+                    <span>Summary : </span>
+                    <section>
+                        <p>{{ book.summary }}</p>
+                    </section>
+                </div>                     
+
+                <div class="book-category">
+                    <span class="category-label">Categories : </span> <span> {{ book.category }} </span>
+                </div>
+
+                <div class="book-publisher">
+                    <span class="publisher-label">Publisher : </span>
+                    <span>{{ book.publisher }}</span>
+                </div>
+
+                <div class="pages">
+                    <span>{{ book.pages }} Pages</span>
+                </div>
+
+                <div class="star-rating">
+                    <p class="rating">{{ book.rating }}<span class="rating-degree">/5<span></p>
+                    <span class="star">&#9733</span>
+                    <span class="star">&#9733</span>
+                    <span class="star">&#9733</span>
+                    <span class="star">&#9733</span>
+                    <span class="star">&#9734</span>
+                    <p class="num-rating">Rating</p>
+                </div>
+
+                <div class="book-ISBN">
+                    ISBN {{ book.isbn }}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

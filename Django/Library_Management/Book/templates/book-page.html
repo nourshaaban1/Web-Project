@@ -18,7 +18,7 @@
                     <p class="book-edition">- {{book.edition}} Edition -</p>
                     <!--User buttons-->
                     {% if book.status == 'Available' %}
-                        <div class="book-borrow"><button class="book-borrow-button">Borrow</button></div>
+                        <div class="book-borrow"><a href="{% url 'borrow_book' book.isbn %}"><button class="book-borrow-button">Borrow</button></a></div>
                     {% endif %}
                     <div class="book-wishlist"><button class="book-wishlist-button">Add to Wishlist</button></div>                 
                 </div>

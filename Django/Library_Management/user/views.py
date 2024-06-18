@@ -9,9 +9,15 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
+from Borrowed.models import Borrowing
 
 def account(request):
-    return render(request, 'account.html')
+    if request.user.is_authenticated:
+        borrowings_count = Borrowing.objects.filter(borrower=request.user).count()
+    else:
+        borrowings_count = 0
+
+    return render(request, 'account.html', {'borrowings_count': borrowings_count})
 
 def log_in(request):
     if request.method == "POST":

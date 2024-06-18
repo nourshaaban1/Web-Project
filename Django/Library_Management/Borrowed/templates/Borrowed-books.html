@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block headers %}
+    <title>Your Books</title>
+    <link rel="stylesheet" href="{% static 'css/Borrowed-books.css' %}">
+{% endblock %} 
+    
+{% block content %}
+<main>
+    <div class="book-container">
+        <h1>Your Books:</h1>
+        <ul> 
+            {% for borrowing in borrowings %}
+                <li>
+                    <a href="{% url 'book-page1' borrowing.borrowed_book.isbn %}">
+                        <img class="book" src="{{ borrowing.borrowed_book.cover }}" alt="{{ borrowing.borrowed_book.title }}">
+                    </a>
+                    <p>{{ borrowing.borrowed_book.title }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</main>
+{% endblock %}

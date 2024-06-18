@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block headers %}
-    <script src="{% static 'scripts/search.js' %}" defer></script>
-    <script src="{% static 'scripts/all-books.js' %}" defer></script>
+    <script src="{% static 'js/search.js' %}" defer></script>
+    <script src="{% static 'js/all-books.js' %}" defer></script>
     <title>Books</title>
     <link rel="stylesheet" href="{% static 'css/all-books.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -35,9 +35,11 @@
             <i class='bx bx-search'></i>
         </div>
     </div>
+    <!-- Search results section -->
+    <div id="search-results" class="dropdown-results"></div>
 
     <div class="book-container">
-        <h1 style="height: 90px; width: 150px;">All Books:</h1>
+        <h1>All Books:</h1>
         <ul>
             {% for book in books %}
             <li>
@@ -52,7 +54,7 @@
     </div>
 
     <div class="book-container">
-        <h1 style="height: 90px; width: 150px;">Available Books:</h1>
+        <h1>Available Books:</h1>
         <ul>
             {% for book in available_books %}
             <li>
@@ -67,7 +69,7 @@
     </div>
 
     <div class="book-container">
-        <h1 style="height: 90px; width: 150px;">Unavailable Books:</h1>
+        <h1>Unavailable Books:</h1>
         <ul>
             {% for book in unavailable_books %}
             <li>

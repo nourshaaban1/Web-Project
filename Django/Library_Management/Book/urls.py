@@ -8,4 +8,6 @@ urlpatterns = [
     path('book-table/', views.book_table, name='book-table'),
     path('edit-book.html/<str:isbn>/', views.edit_book, name='edit-book'),
     path('upload-book.html/', views.upload_book, name='upload-book'),
+    path('borrow/<str:isbn>/', views.borrow_book, name='borrow_book'),
+    path('search/', views.search_view, name='search'),
 ]

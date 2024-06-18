@@ -11,4 +11,4 @@ class Borrowing(models.Model):
     borrowed_book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='borrowings')
 
     def __str__(self):
-        return f"{self.user.username} borrowed {self.book.title}"
+        return f"{self.borrower.username} borrowed {self.borrowed_book.title}"
